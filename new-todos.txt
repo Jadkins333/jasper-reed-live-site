@@ -1,0 +1,3 @@
+- Replace email-based mailto form with dynamic backend (Netlify, Formspree, etc.).
+- Add payment gateway integration (Stripe/PayPal).
+- Push final changes and verify public deployment.
