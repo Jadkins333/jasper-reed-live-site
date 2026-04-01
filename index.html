@@ -1,25 +1,240 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Jasper Reed Gear Guides</title>
-<style>
- body { font-family:Georgia, 'Times New Roman', serif; background:#0f1115; color:#e8edf3; margin:0; }
- .wrap { max-width:900px; margin:0 auto; padding:28px 18px 80px; }
- .hero { background:#171a21; border:1px solid #2a3140; border-radius:14px; padding:20px; }
- a { color:#6ee7b7; }
- li { margin:10px 0; font-size:18px; }
- .muted { color:#a7b0bd; }
-</style>
-</head><body>
-<div class="wrap">
-  <div class="hero">
-    <h1>Jasper Reed Money Guides</h1>
-    <p class="muted">Buyer-intent gear pages with direct offer links.</p>
-    <ul><li><a href="sony-35mm-f14-gm-lens.html">Sony 35mm f/1.4 GM Lens: Is It Worth It for Cinematic Night Street Shooters? (2026)</a></li>
-<li><a href="sony-a7riv-mirrorless-camera.html">Sony A7RIV Mirrorless Camera: Is It Worth It for Cinematic Night Street Shooters? (2026)</a></li>
-<li><a href="tiffen-14-black-pro-mist-filter.html">Tiffen 1/4 Black Pro-Mist Filter: Is It Worth It for Cinematic Night Street Shooters? (2026)</a></li></ul>
-    <p class="muted">Disclosure: affiliate links are used where applicable.</p>
-  </div>
-</div>
-</body></html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>48-Hour Photo Selection Sprint | Fast image culling for busy photographers</title>
+  <meta name="description" content="Human-reviewed photo culling for photographers drowning in raws. Send one shoot, get a clean shortlist in 48 hours for $49." />
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --panel: #141416;
+      --text: #f5f5f2;
+      --muted: #b7b7ae;
+      --line: #2a2a2e;
+      --accent: #d4ff3f;
+      --accentText: #111;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 24px; }
+    .hero {
+      padding: 56px 24px 28px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #111214 0%, #0b0b0c 100%);
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.6rem);
+      line-height: 0.98;
+      margin: 0 0 18px;
+      max-width: 900px;
+    }
+    .lede {
+      max-width: 720px;
+      font-size: 1.12rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--line);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accentText);
+      border-color: var(--accent);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+    }
+    .proofbar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .proofbar div, .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+    }
+    section { padding: 34px 24px; }
+    h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2.3rem);
+      margin: 0 0 16px;
+    }
+    p, li { color: var(--muted); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .card strong { display: block; margin-bottom: 8px; color: var(--text); }
+    .pricing {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .price {
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 4px 0 8px;
+      color: var(--accent);
+    }
+    ul { padding-left: 18px; }
+    .faq details {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+    .footer {
+      padding: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    input, button {
+      font: inherit;
+    }
+    @media (max-width: 800px) {
+      .pricing { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">For photographers with overloaded galleries</div>
+      <h1>Get your shoot narrowed down fast so you can deliver, post, or sell without drowning in raws.</h1>
+      <p class="lede">Photo Selection Sprint is a simple service: you send one gallery, we review the frames manually, and you get a clean shortlist within 48 hours. No fake automation promises. No editing upsell trap. Just fast culling so you stop losing hours to first-pass selection.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:bookings@photo-selection-sprint.local?subject=Book%20Photo%20Selection%20Sprint&body=I%20want%20to%20book%20the%20%2449%20Photo%20Selection%20Sprint.%0A%0AShoot%20type%3A%0AApprox.%20image%20count%3A%0ADeadline%3A%0ALink%20to%20gallery%3A">Book the $49 sprint</a>
+        <a class="btn btn-secondary" href="#lead-form">Ask for a sample workflow</a>
+      </div>
+      <div class="proofbar">
+        <div><strong>Offer:</strong><br>One shoot culled to a shortlist</div>
+        <div><strong>Turnaround:</strong><br>48 hours or less</div>
+        <div><strong>Price:</strong><br>$49 flat for up to 1,000 images</div>
+        <div><strong>Buyer:</strong><br>Busy photographers, content shooters, event teams</div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap grid">
+      <div class="card">
+        <strong>What problem this solves</strong>
+        <p>Photographers burn time on the first pass: duplicates, near-misses, blinks, soft frames, and the endless maybe pile. That delay slows delivery and kills momentum.</p>
+      </div>
+      <div class="card">
+        <strong>What you get</strong>
+        <p>A clearly marked shortlist and reject pass for one gallery, based on obvious keepers, duplicates, composition strength, and usability for delivery or content.</p>
+      </div>
+      <div class="card">
+        <strong>Why this converts</strong>
+        <p>It is cheap enough to test, specific enough to understand in seconds, and painful enough that photographers already pay with their own time if they do not outsource it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="grid">
+        <div class="card"><strong>1. Send one gallery</strong><p>Email a Lightroom catalog export, contact sheet, or gallery link with up to 1,000 images from a single shoot.</p></div>
+        <div class="card"><strong>2. We review it manually</strong><p>No invented machine-learning claim here. This is a human first-pass cull using the criteria listed on this page.</p></div>
+        <div class="card"><strong>3. Get your shortlist back</strong><p>You receive a selection list and notes you can use immediately to edit, deliver, or build content from the strongest frames.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap pricing">
+      <div class="card">
+        <h2>The offer</h2>
+        <p><strong>Photo Selection Sprint</strong></p>
+        <div class="price">$49</div>
+        <p>One-time first-pass cull for a single shoot with up to 1,000 images.</p>
+        <ul>
+          <li>48-hour turnaround target</li>
+          <li>Manual shortlist of strongest usable frames</li>
+          <li>Obvious rejects flagged: blinks, accidental duplicates, missed focus, weak variants</li>
+          <li>Delivered by email in a format you can act on</li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:bookings@photo-selection-sprint.local?subject=Book%20Photo%20Selection%20Sprint&body=I%20want%20to%20book%20the%20%2449%20Photo%20Selection%20Sprint.%0A%0AShoot%20type%3A%0AApprox.%20image%20count%3A%0ADeadline%3A%0ALink%20to%20gallery%3A">Book now</a>
+        </div>
+      </div>
+      <div class="card" id="lead-form">
+        <h2>Lead capture</h2>
+        <p>Not ready to book? Send your next shoot size and deadline. You will get the exact workflow and whether it fits the sprint.</p>
+        <form action="mailto:bookings@photo-selection-sprint.local" method="post" enctype="text/plain">
+          <label>Name<br><input style="width:100%;margin-top:6px;padding:12px;border-radius:10px;border:1px solid #333;background:#0d0d0f;color:#fff" type="text" name="name" required></label><br><br>
+          <label>Email<br><input style="width:100%;margin-top:6px;padding:12px;border-radius:10px;border:1px solid #333;background:#0d0d0f;color:#fff" type="email" name="email" required></label><br><br>
+          <label>Approximate image count<br><input style="width:100%;margin-top:6px;padding:12px;border-radius:10px;border:1px solid #333;background:#0d0d0f;color:#fff" type="text" name="image_count" placeholder="Example: 650" required></label><br><br>
+          <label>Deadline<br><input style="width:100%;margin-top:6px;padding:12px;border-radius:10px;border:1px solid #333;background:#0d0d0f;color:#fff" type="text" name="deadline" placeholder="Example: Need shortlist by Friday"></label><br><br>
+          <button class="btn btn-primary" type="submit">Send details</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap faq">
+      <h2>Straight answers</h2>
+      <details open>
+        <summary>Who should buy this?</summary>
+        <p>Freelance photographers, event shooters, portrait teams, content creators, and anyone sitting on a large shoot that needs a faster first pass.</p>
+      </details>
+      <details>
+        <summary>What this is not</summary>
+        <p>This is not full retouching, color grading, album design, or a fake AI product. It is a focused culling service with a clear boundary.</p>
+      </details>
+      <details>
+        <summary>What if the shoot is bigger than 1,000 images?</summary>
+        <p>Email the image count first. Bigger shoots can be quoted honestly instead of pretending one flat price fits everything.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>Site built as a one-page sales test for a real service format: manual first-pass photo culling.</div>
+      <div>Primary CTA: direct booking via email. Secondary CTA: lead capture via email form.</div>
+    </div>
+  </footer>
+</body>
+</html>
