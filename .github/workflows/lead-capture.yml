@@ -1,0 +1,41 @@
+name: Photo Selection Sprint lead capture
+
+on:
+  repository_dispatch:
+    types: [photo_selection_lead]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create lead issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const payload = context.payload.client_payload || {};
+            const name = payload.name || 'Unknown';
+            const email = payload.email || 'Unknown';
+            const imageCount = payload.image_count || 'Unknown';
+            const deadline = payload.deadline || 'Not provided';
+            const source = payload.source || 'landing-page';
+            const body = [
+              'New inbound lead from Photo Selection Sprint.',
+              '',
+              `- Name: ${name}`,
+              `- Email: ${email}`,
+              `- Approximate image count: ${imageCount}`,
+              `- Deadline: ${deadline}`,
+              `- Source: ${source}`,
+            ].join('\n');
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Lead: ${name} — ${imageCount} images`,
+              body,
+              labels: ['lead']
+            });
